@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Goa Tour & Travels | Cab, Bus & Tempo Traveller</title>
+
+    <meta name="description"
+          content="Goa Tour & Travels - Car, Tempo Traveller, Urbania and Bus rental services in Goa. Book your vehicle for sightseeing, airport pickup and Goa tours.">
+
+     <meta name="keywords" content="Goa taxi service, goa sightseeing taxi packages, taxi from north goa to south goa, affordable goa taxi rate, candolim taxi service, Goa cab booking, Goa car rental, Goa bus rental, goa bus service, Goa tour package, best cab service in goa">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222;
+            background: #f7f9fb;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 18px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(5px);
+        }
+
+        .logo {
+            color: white;
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #ffd700;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            background:
+                linear-gradient(rgba(0, 40, 70, 0.42), rgba(0, 0, 0, 0.55)),
+                url("goa-beach.jpg") center/cover no-repeat;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px 60px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            color: white;
+        }
+
+        .hero-content .small-title {
+            font-size: 20px;
+            color: #ffd700;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 78px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 15px rgba(0,0,0,.4);
+        }
+
+        .hero h1 span {
+            color: #ffd700;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: #ffcc00;
+            color: #111;
+        }
+
+        .btn-primary:hover {
+            background: #fff;
+            transform: translateY(-3px);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1da851;
+            transform: translateY(-3px);
+        }
+
+        /* ================= WHATSAPP FLOATING ================= */
+
+        .whatsapp-float {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            z-index: 9999;
+
+            background: #25D366;
+            color: white;
+            padding: 14px 21px;
+            border-radius: 50px;
+
+            text-decoration: none;
+            font-weight: bold;
+
+            display: flex;
+            align-items: center;
+            gap: 9px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,.25);
+            transition: .3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.06);
+        }
+
+        .whatsapp-icon {
+            font-size: 22px;
+        }
+
+        /* ================= SECTION ================= */
+
+        section {
+            padding: 80px 6%;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 45px;
+        }
+
+        .section-heading h2 {
+            font-size: 42px;
+            margin-bottom: 12px;
+            color: #123;
+        }
+
+        .section-heading p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .section-line {
+            width: 70px;
+            height: 4px;
+            background: #ffcc00;
+            margin: 15px auto;
+            border-radius: 5px;
+        }
+
+        /* ================= VEHICLES ================= */
+
+        .vehicles {
+            background: white;
+        }
+
+        .vehicle-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .vehicle-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,.10);
+            transition: .3s;
+        }
+
+        .vehicle-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,.16);
+        }
+
+        .vehicle-image {
+            height: 210px;
+            background: #e9eef2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .vehicle-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .vehicle-placeholder {
+            font-size: 70px;
+        }
+
+        .vehicle-info {
+            padding: 22px;
+        }
+
+        .vehicle-info h3 {
+            font-size: 23px;
+            margin-bottom: 10px;
+            color: #123;
+        }
+
+        .vehicle-info p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .vehicle-btn {
+            display: inline-block;
+            background: #123;
+            color: white;
+            padding: 11px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .vehicle-btn:hover {
+            background: #ffcc00;
+            color: #111;
+        }
+
+        /* ================= SERVICES ================= */
+
+        .services {
+            background: #f0f6f8;
+        }
+
+        .service-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .service-box {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,.07);
+        }
+
+        .service-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .service-box h3 {
+            margin-bottom: 10px;
+        }
+
+        .service-box p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ================= CTA ================= */
+
+        .cta {
+            background:
+                linear-gradient(90deg, rgba(0,0,0,.75), rgba(0,0,0,.45)),
+                url("goa-sunset.jpg") center/cover no-repeat;
+
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 44px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 28px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #071a25;
+            color: white;
+            padding: 50px 6% 25px;
+        }
+
+        .footer-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+
+        footer p,
+        footer a {
+            color: #c7d1d6;
+            line-height: 1.8;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ffd700;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,.12);
+            padding-top: 20px;
+            margin-top: 35px;
+            color: #9aaab2;
+            font-size: 14px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            .vehicle-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            nav {
+                gap: 14px;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            header {
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                min-height: 90vh;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .section-heading h2 {
+                font-size: 32px;
+            }
+
+            .vehicle-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta h2 {
+                font-size: 32px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                right: 15px;
+                bottom: 15px;
+                padding: 12px 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+        Goa <span>Tour & Travels</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#vehicles">Vehicles</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="small-title">
+            Welcome to Goa
+        </div>
+
+        <h1>
+            Explore Goa<br>
+            <span>With Comfort & Style</span>
+        </h1>
+
+        <p>
+            Premium Cars, Tempo Travellers, Urbania & Buses
+            for Goa Sightseeing, Airport Transfers, Family Trips
+            and Group Tours.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#vehicles" class="btn btn-primary">
+                🚐 View Vehicles
+            </a>
+
+            <a href="#" class="btn btn-whatsapp whatsapp-link">
+                💬 Chat on WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= VEHICLES ================= -->
+
+<section class="vehicles" id="vehicles">
+
+    <div class="section-heading">
+
+        <h2>Our Vehicles</h2>
+
+        <div class="section-line"></div>
+
+        <p>
+            Choose the perfect vehicle for your Goa trip.
+            From comfortable cars for families to spacious
+            buses for large groups.
+        </p>
+
+    </div>
+
+
+    <div class="vehicle-grid">
+
+
+        <!-- DESIRE -->
+
+        <div class="vehicle-card">
+
+            <div class="vehicle-image">
+                <img src="C:\Users\Admin\Desktop\download dzire.webp" alt="Swift Dzire Goa Taxi">
+            </div>
+
+            <div class="vehicle-info">
+
+                <h3>🚗 Swift Dzire</h3>
+
+                <p>
+                    Comfortable and economical car for
+                    couples, small families and airport transfers.
+                </p>
+
+                <a href="#" class="vehicle-btn whatsapp-link">
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ERTIGA -->
+
+        <div class="vehicle-card">
+
+            <div class="vehicle-image">
+                <img src="C:\Users\Admin\Desktop\download ertiga.webp" alt="Maruti Ertiga Goa Taxi">
+            </div>
+
+            <div class="vehicle-info">
+
+                <h3>🚙 Maruti Ertiga</h3>
+
+                <p>
+                    Spacious 6/7 seater vehicle ideal for
+                    family holidays and sightseeing.
+                </p>
+
+                <a href="#" class="vehicle-btn whatsapp-link">
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- INNOVA -->
+
+        <div class="vehicle-card">
+
+            <div class="vehicle-image">
+                <img src="C:\Users\Admin\Desktop\download inova.jpg" alt="Toyota Innova Crysta Goa">
+            </div>
+
+            <div class="vehicle-info">
+
+                <h3>🚘 Innova Crysta</h3>
+
+                <p>
+                    Premium and comfortable vehicle for
+                    luxury family trips and long journeys.
+                </p>
+
+                <a href="#" class="vehicle-btn whatsapp-link">
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- TEMPO -->
+
+        <div class="vehicle-card">
+
+            <div class="vehicle-image">
+                <img src="C:\Users\Admin\Desktop\download.webp" alt="Tempo Traveller Goa">
+            </div>
+
+            <div class="vehicle-info">
+
+                <h3>🚐 Tempo Traveller</h3>
+
+                <p>
+                    Perfect choice for friends, families
+                    and medium-sized groups.
+                </p>
+
+                <a href="#" class="vehicle-btn whatsapp-link">
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- URBANIA -->
+
+        <div class="vehicle-card">
+
+            <div class="vehicle-image">
+                <img src="C:\Users\Admin\Desktop\download urbania.webp" alt="Force Urbania Goa">
+            </div>
+
+            <div class="vehicle-info">
+
+                <h3>🚌 Force Urbania</h3>
+
+                <p>
+                    Premium group travel with spacious
+                    interiors and comfortable seating.
+                </p>
+
+                <a href="#" class="vehicle-btn whatsapp-link">
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- BUS -->
+
+        <div class="vehicle-card">
+
+            <div class="vehicle-image">
+                <img src="C:\Users\Admin\Desktop\download bus.webp" alt="Tourist Bus Goa">
+            </div>
+
+            <div class="vehicle-info">
+
+                <h3>🚌 Tourist Bus</h3>
+
+                <p>
+                    Large buses available for weddings,
+                    corporate trips, school trips and groups.
+                </p>
+
+                <a href="#" class="vehicle-btn whatsapp-link">
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="services">
+
+    <div class="section-heading">
+
+        <h2>Our Services</h2>
+
+        <div class="section-line"></div>
+
+        <p>
+            Complete transportation solutions for your Goa holiday.
+        </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+        <div class="service-box">
+
+            <div class="service-icon">🏖️</div>
+
+            <h3>Goa Sightseeing</h3>
+
+            <p>
+                Explore North Goa and South Goa
+                comfortably with our vehicles.
+            </p>
+
+        </div>
+
+
+        <div class="service-box">
+
+            <div class="service-icon">✈️</div>
+
+            <h3>Airport Transfer</h3>
+
+            <p>
+                Reliable pickup and drop services
+                from Goa airports.
+            </p>
+
+        </div>
+
+
+        <div class="service-box">
+
+            <div class="service-icon">👨‍👩‍👧‍👦</div>
+
+            <h3>Family Tours</h3>
+
+            <p>
+                Comfortable vehicles for family
+                vacations and private tours.
+            </p>
+
+        </div>
+
+
+        <div class="service-box">
+
+            <div class="service-icon">🎉</div>
+
+            <h3>Group Tours</h3>
+
+            <p>
+                Tempo, Urbania and buses for
+                large groups and events.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta" id="contact">
+
+    <h2>Planning a Trip to Goa?</h2>
+
+    <p>
+        Book your vehicle today and enjoy a comfortable
+        and hassle-free Goa trip.
+    </p>
+
+    <a href="#" class="btn btn-whatsapp whatsapp-link">
+        💬 Chat With Us on WhatsApp
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3>Goa Tour & Travels</h3>
+
+            <p>
+                Your trusted travel partner in Goa.
+                Cars, Tempo Travellers, Urbania and
+                Tourist Buses available for sightseeing,
+                transfers and group tours.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <p><a href="#home">Home</a></p>
+            <p><a href="#vehicles">Vehicles</a></p>
+            <p><a href="#services">Services</a></p>
+            <p><a href="#contact">Contact</a></p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Contact</h3>
+
+            <p>📍 Goa, India</p>
+            <p>📞 +91 85339 88719</p>
+            <p>💬 WhatsApp Available</p>
+            <p>   khanaftab24943@gmail.com</p>
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Goa Tour & Travels.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+
+<a href="#" class="whatsapp-float whatsapp-link">
+
+    <span class="whatsapp-icon">💬</span>
+
+    <span>Chat on WhatsApp</span>
+
+</a>
+
+
+<!-- ================= WHATSAPP SCRIPT ================= -->
+
+<script>
+
+    /*
+       अपना WhatsApp नंबर यहां डालें।
+
+       Example:
+       India +91 85339 88719
+
+       तो यहां लिखें:
+       918533988719
+    */
+
+    const whatsappNumber = "918533988719";
+
+
+    const message =
+        "Hello Goa Tour & Travels! I want to enquire about your vehicle rental services in Goa.";
+
+
+    document.querySelectorAll(".whatsapp-link").forEach(function(button) {
+
+        button.addEventListener("click", function(event) {
+
+            event.preventDefault();
+
+            const whatsappURL =
+                ["https:", "", "wa.me", whatsappNumber]
+                .join("/") +
+                "?text=" +
+                encodeURIComponent(message);
+
+            window.open(whatsappURL, "_blank");
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
